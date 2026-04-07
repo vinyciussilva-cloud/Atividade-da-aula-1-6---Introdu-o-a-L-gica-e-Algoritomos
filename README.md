@@ -1,41 +1,112 @@
-# Lista 1 — Lógica de Programação de Algoritmos
+<div align="center">
 
-**Curso Técnico em Desenvolvimento de Sistemas**
+# 🧠 Lista 1 — Lógica de Programação de Algoritmos
 
-> Atividade: elaborar algoritmos completos com pseudocódigo e descrição do fluxograma para tarefas cotidianas.
+[![Status](https://img.shields.io/badge/status-concluído-brightgreen?style=flat-square)](.)
+[![Curso](https://img.shields.io/badge/curso-Técnico%20em%20Dev.%20de%20Sistemas-blue?style=flat-square)](.)
+[![Disciplina](https://img.shields.io/badge/disciplina-Lógica%20de%20Programação-purple?style=flat-square)](.)
+[![Algoritmos](https://img.shields.io/badge/algoritmos-5-orange?style=flat-square)](.)
 
----
+> *"Antes de escrever código, aprenda a pensar. A lógica é a base de tudo."*
 
-## Sumário
-
-1. [Ir ao Trabalho](#1-ir-ao-trabalho)
-2. [Troca de Pneu](#2-troca-de-pneu)
-3. [Troca de Lâmpada](#3-troca-de-lâmpada)
-4. [Pegar um Ônibus](#4-pegar-um-ônibus)
-5. [Preparar um Bolo Simples](#5-preparar-um-bolo-simples)
+</div>
 
 ---
 
-## 1. Ir ao Trabalho
+## 📋 Sobre a Atividade
 
-### Descrição do Fluxograma
+Esta é a **Lista 1 de Lógica de Programação**, desenvolvida como parte do **Curso Técnico em Desenvolvimento de Sistemas**. O objetivo é afastar o foco da sintaxe de linguagens de programação e exercitar o que realmente importa: **o raciocínio lógico e a decomposição de problemas**.
+
+Para cada tarefa cotidiana foram elaborados:
+- 📊 **Fluxograma** — representação visual do passo a passo com decisões e laços
+- 📝 **Pseudocódigo** — descrição do algoritmo em linguagem próxima ao português estruturado
+
+---
+
+## 📚 Algoritmos Desenvolvidos
+
+| # | Algoritmo | Estruturas Utilizadas |
+|---|---|---|
+| 1 | 🚶 [Ir ao Trabalho](#1-️-ir-ao-trabalho) | `SE/ENTÃO`, `ENQUANTO`, `LEIA`, `ESCREVA` |
+| 2 | 🔧 [Troca de Pneu](#2--troca-de-pneu) | `SE/ENTÃO`, `PARE`, `LEIA`, `ESCREVA` |
+| 3 | 💡 [Troca de Lâmpada](#3--troca-de-lâmpada) | `SE/ENTÃO`, `ENQUANTO`, `LEIA`, `ESCREVA` |
+| 4 | 🚌 [Pegar um Ônibus](#4--pegar-um-ônibus) | `SE/ENTÃO`, `ENQUANTO`, `LEIA`, `ESCREVA` |
+| 5 | 🎂 [Preparar um Bolo](#5--preparar-um-bolo-simples) | `ENQUANTO`, `variáveis`, `LEIA`, `ESCREVA` |
+
+---
+
+## 🔑 Conceitos-Chave
+
+Antes de ver os algoritmos, é importante entender as estruturas utilizadas:
+
+| Estrutura | Descrição | Quando usar |
+|---|---|---|
+| `SE / ENTÃO / SENÃO` | Executa um bloco de acordo com uma condição | Quando há uma decisão com dois caminhos possíveis |
+| `ENQUANTO / FAÇA` | Repete um bloco enquanto a condição for verdadeira | Quando não sabemos quantas repetições serão necessárias |
+| `LEIA` | Recebe um dado de entrada (do usuário ou do ambiente) | Para capturar informações externas |
+| `ESCREVA` | Exibe uma saída ou executa uma ação | Para registrar cada passo do algoritmo |
+| `PARE` | Interrompe o algoritmo antecipadamente | Quando uma condição impede a continuidade |
+
+---
+
+## 1. 🚶 Ir ao Trabalho
+
+> **Problema:** Descrever o passo a passo para sair de casa e chegar ao trabalho — sem esquecer o crachá.
+
+**Pontos de atenção:**
+- 🔁 Laço obrigatório para garantir que o crachá seja encontrado antes de sair
+- 🔀 Decisão sobre o meio de transporte (carro, ônibus ou a pé)
+- ✅ Etapas não podem ser puladas (ex: sem abrir a porta não dá para sair)
+
+### Fluxograma
 
 ```
-INÍCIO
-  → Acordar e levantar
-  → Higiene pessoal (banho, escova dentes)
-  → Vestir roupa de trabalho
-  → [DECISÃO] Está com o crachá?
-      NÃO → Voltar e procurar o crachá → (repete até encontrar)
-      SIM → Tomar café da manhã
-  → Abrir a porta e sair de casa
-  → [DECISÃO] Qual meio de transporte?
-      Carro/moto → Entrar no veículo e dirigir
-      Ônibus     → Andar até o ponto e embarcar
-      A pé       → Caminhar até o trabalho
-  → Chegar ao trabalho
-  → Passar o crachá na catraca
-FIM
+┌─────────────┐
+│    INÍCIO   │
+└──────┬──────┘
+       ↓
+┌──────────────────────┐
+│  Acordar e levantar  │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│   Higiene pessoal    │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│   Vestir roupa       │
+└──────────┬───────────┘
+           ↓
+    ┌──────┴──────┐
+    │ Está com o  │
+    │   crachá?   │◄──────────┐
+    └──────┬──────┘           │
+     Sim ↓    └─ Não          │
+           ↓         ┌────────┴────────┐
+┌──────────────────────┐  │ Procurar o crachá │
+│   Tomar café         │  └─────────────────┘
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│  Abrir porta e sair  │
+└──────────┬───────────┘
+           ↓
+    ┌──────┴──────────┐
+    │  Meio de        │
+    │  transporte?    │
+    └──┬────┬─────┬───┘
+  Carro↓  Ônibus↓  A pé↓
+  [dirigir] [ponto] [caminhar]
+       └──────┴───────┘
+                ↓
+┌──────────────────────┐
+│  Passar o crachá na  │
+│      catraca         │
+└──────────┬───────────┘
+           ↓
+┌─────────────┐
+│     FIM     │
+└─────────────┘
 ```
 
 ### Pseudocódigo
@@ -76,28 +147,64 @@ FIM_ALGORITMO
 
 ---
 
-## 2. Troca de Pneu
+## 2. 🔧 Troca de Pneu
 
-### Descrição do Fluxograma
+> **Problema:** Descrever com segurança o processo de trocar um pneu furado na beira da estrada.
+
+**Pontos de atenção:**
+- ⚠️ Verificação do estepe **antes** de começar — se estiver ruim, o algoritmo para e chama assistência
+- 🔩 Afrouxar parafusos **antes** de levantar o carro (detalhe crítico de segurança)
+- ✅ Parafusos devem ser apertados em forma de cruz para distribuir a pressão
+
+### Fluxograma
 
 ```
-INÍCIO
-  → Acionar o pisca-alerta
-  → Parar o carro em local seguro (acostamento)
-  → Pegar o estepe e o macaco do porta-malas
-  → [DECISÃO] O estepe está calibrado e em boas condições?
-      NÃO → Chamar assistência técnica → FIM
-      SIM → Afrouxar os parafusos (sem remover completamente)
-  → Posicionar o macaco no ponto correto do chassi
-  → Elevar o carro com o macaco
-  → Remover completamente os parafusos
-  → Retirar o pneu furado
-  → Colocar o estepe
-  → Apertar os parafusos parcialmente
-  → Abaixar o macaco até o carro tocar o chão
-  → Apertar os parafusos definitivamente (em cruz)
-  → Guardar pneu furado e macaco no porta-malas
-FIM
+┌─────────────┐
+│    INÍCIO   │
+└──────┬──────┘
+       ↓
+┌──────────────────────┐
+│  Acionar pisca-alerta │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ Parar em local seguro │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────────┐
+│ Pegar estepe e macaco    │
+└──────────┬───────────────┘
+           ↓
+    ┌──────┴──────┐
+    │  Estepe em  │
+    │  boas cond? │
+    └──┬──────────┘
+  Sim ↓       └─ Não → [Chamar assistência] → FIM
+       ↓
+┌──────────────────────────┐
+│ Afrouxar parafusos (parcial)│
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│  Posicionar o macaco     │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│    Elevar o carro        │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│ Remover pneu / colocar   │
+│       estepe             │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│ Abaixar e apertar em cruz│
+└──────────┬───────────────┘
+           ↓
+┌─────────────┐
+│     FIM     │
+└─────────────┘
 ```
 
 ### Pseudocódigo
@@ -131,28 +238,59 @@ FIM_ALGORITMO
 
 ---
 
-## 3. Troca de Lâmpada
+## 3. 💡 Troca de Lâmpada
 
-### Descrição do Fluxograma
+> **Problema:** Substituir uma lâmpada queimada com segurança, usando escada se necessário.
+
+**Pontos de atenção:**
+- ⚡ Desligar o interruptor é a **primeira etapa obrigatória** (segurança elétrica)
+- 🌡️ Aguardar esfriar evita queimaduras
+- 🔁 Laço de verificação garante que a lâmpada nova é compatível antes de instalar
+
+### Fluxograma
 
 ```
-INÍCIO
-  → Desligar o interruptor
-  → Aguardar a lâmpada esfriar (~5 minutos)
-  → [DECISÃO] Alcança sem escada?
-      NÃO → Buscar escada → Posicionar com segurança
-      SIM → (continua)
-  → Subir / aproximar-se da lâmpada
-  → Girar a lâmpada para remover (sentido anti-horário)
-  → [DECISÃO] A nova lâmpada é compatível (mesmo bocal/potência)?
-      NÃO → Buscar lâmpada correta → (repete verificação)
-      SIM → Instalar a nova lâmpada (sentido horário)
-  → Descer da escada
-  → Ligar o interruptor
-  → [DECISÃO] A lâmpada acendeu?
-      NÃO → Verificar circuito elétrico
-      SIM → Concluído
-FIM
+┌─────────────┐
+│    INÍCIO   │
+└──────┬──────┘
+       ↓
+┌──────────────────────────┐
+│  Desligar o interruptor  │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│   Aguardar esfriar 5min  │
+└──────────┬───────────────┘
+           ↓
+    ┌──────┴──────┐
+    │ Precisa de  │
+    │   escada?   │
+    └──┬──────────┘
+  Não ↓       └─ Sim → [Buscar e posicionar escada]
+       ↓                          ↓
+       └──────────────────────────┘
+                    ↓
+┌──────────────────────────┐
+│  Remover lâmpada queimada │
+└──────────┬───────────────┘
+           ↓
+    ┌──────┴──────┐
+    │  Lâmpada    │◄──────────────┐
+    │ compatível? │               │
+    └──┬──────────┘               │
+  Sim ↓    └─ Não → [Buscar lâmpada correta] ──┘
+       ↓
+┌──────────────────────────┐
+│   Instalar nova lâmpada  │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│  Descer e ligar interrup.│
+└──────────┬───────────────┘
+           ↓
+┌─────────────┐
+│     FIM     │
+└─────────────┘
 ```
 
 ### Pseudocódigo
@@ -197,28 +335,64 @@ FIM_ALGORITMO
 
 ---
 
-## 4. Pegar um Ônibus
+## 4. 🚌 Pegar um Ônibus
 
-### Descrição do Fluxograma
+> **Problema:** Descrever o processo de usar transporte público com cartão de integração, do planejamento ao desembarque.
+
+**Pontos de atenção:**
+- 💳 Verificação de saldo **antes** de ir ao ponto — evita transtornos
+- 🔁 Laço de espera para o ônibus correto — nem todo ônibus que passa é o desejado
+- 🔔 Acionar a campainha antes da parada desejada é etapa crítica
+
+### Fluxograma
 
 ```
-INÍCIO
-  → Consultar o número da linha e horário desejado
-  → [DECISÃO] Saldo no cartão é suficiente para a tarifa?
-      NÃO → Recarregar o cartão de transporte
-      SIM → (continua)
-  → Deslocar-se até o ponto de ônibus
-  → [DECISÃO] O ônibus que chegou é o da linha correta?
-      NÃO → Aguardar o próximo ônibus → (repete verificação)
-      SIM → Aguardar o ônibus parar completamente
-  → Embarcar pela porta dianteira
-  → Aproximar o cartão da catraca para validar
-  → Encontrar assento ou local para ficar
-  → [DECISÃO] Chegou ao destino?
-      NÃO → Continuar aguardando → (repete)
-      SIM → Acionar a campainha
-  → Desembarcar pela porta traseira
-FIM
+┌─────────────┐
+│    INÍCIO   │
+└──────┬──────┘
+       ↓
+┌──────────────────────────┐
+│ Consultar linha/horário  │
+└──────────┬───────────────┘
+           ↓
+    ┌──────┴──────┐
+    │  Saldo ok?  │
+    └──┬──────────┘
+  Sim ↓       └─ Não → [Recarregar o cartão]
+       ↓                         ↓
+       └─────────────────────────┘
+                    ↓
+┌──────────────────────────┐
+│   Ir ao ponto de ônibus  │
+└──────────┬───────────────┘
+           ↓
+    ┌──────┴──────┐
+    │  É o ônibus │◄──────────────┐
+    │   correto?  │               │
+    └──┬──────────┘               │
+  Sim ↓    └─ Não → [Aguardar próximo] ──┘
+       ↓
+┌──────────────────────────┐
+│  Aguardar parar + embarcar│
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│    Validar o cartão      │
+└──────────┬───────────────┘
+           ↓
+    ┌──────┴──────┐
+    │  Chegou ao  │◄──────────────┐
+    │  destino?   │               │
+    └──┬──────────┘               │
+  Sim ↓    └─ Não → [Aguardar] ──┘
+       ↓
+┌──────────────────────────┐
+│ Acionar campainha e sair │
+└──────────┬───────────────┘
+           ↓
+┌─────────────┐
+│     FIM     │
+└─────────────┘
 ```
 
 ### Pseudocódigo
@@ -270,30 +444,64 @@ FIM_ALGORITMO
 
 ---
 
-## 5. Preparar um Bolo Simples
+## 5. 🎂 Preparar um Bolo Simples
 
-### Descrição do Fluxograma
+> **Problema:** Descrever o processo completo de fazer um bolo, desde verificar os ingredientes até o teste do palito.
+
+**Pontos de atenção:**
+- 🔥 Pré-aquecer o forno é etapa **obrigatória antes** de preparar a massa
+- 🥄 O fermento deve ser adicionado por último e misturado levemente
+- 🔁 O teste do palito é uma condição de saída do laço — o bolo só sai do forno quando estiver pronto
+
+### Fluxograma
 
 ```
-INÍCIO
-  → Listar os ingredientes necessários
-     (ovos, farinha, açúcar, óleo, leite, fermento)
-  → [DECISÃO] Todos os ingredientes estão disponíveis?
-      NÃO → Comprar ingredientes faltantes → (repete verificação)
-      SIM → Pré-aquecer o forno a 180°C
-  → Medir e separar todos os ingredientes
-  → Bater os ovos com o açúcar e o óleo
-  → Adicionar o leite e misturar
-  → Peneirar e adicionar a farinha aos poucos
-  → Adicionar o fermento por último (misturar levemente)
-  → Untar e enfarinhar a forma
-  → Despejar a massa na forma
-  → Levar ao forno por 40 minutos
-  → [DECISÃO] Palito inserido no centro sai limpo?
-      NÃO → Assar por mais 10 minutos → (repete verificação)
-      SIM → Retirar o bolo do forno
-  → Aguardar esfriar antes de desenformar
-FIM
+┌─────────────┐
+│    INÍCIO   │
+└──────┬──────┘
+       ↓
+┌──────────────────────────────┐
+│   Listar ingredientes        │
+│ (ovos, farinha, açúcar, etc) │
+└──────────┬───────────────────┘
+           ↓
+    ┌──────┴──────┐
+    │  Todos ing. │◄──────────────┐
+    │ disponíveis?│               │
+    └──┬──────────┘               │
+  Sim ↓    └─ Não → [Comprar faltantes] ─┘
+       ↓
+┌──────────────────────────┐
+│  Pré-aquecer forno 180°C │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│   Preparar a massa       │
+│  (misturar ingredientes) │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│  Untar forma + despejar  │
+└──────────┬───────────────┘
+           ↓
+┌──────────────────────────┐
+│   Levar ao forno 40min   │
+└──────────┬───────────────┘
+           ↓
+    ┌──────┴──────┐
+    │   Palito    │◄──────────────┐
+    │  sai limpo? │               │
+    └──┬──────────┘               │
+  Sim ↓    └─ Não → [+10 minutos] ┘
+       ↓
+┌──────────────────────────┐
+│  Retirar e aguardar      │
+│       esfriar            │
+└──────────┬───────────────┘
+           ↓
+┌─────────────┐
+│     FIM     │
+└─────────────┘
 ```
 
 ### Pseudocódigo
@@ -346,16 +554,51 @@ FIM_ALGORITMO
 
 ---
 
-## Estruturas Utilizadas
+## 🧩 O que Aprendemos com Estes Algoritmos?
 
-| Estrutura | Utilização nos algoritmos |
-|---|---|
-| `SE / ENTÃO / SENÃO` | Decisões únicas: estepe ok?, lâmpada compatível?, saldo suficiente? |
-| `ENQUANTO / FAÇA` | Repetição com condição: buscar crachá, aguardar ônibus certo, testar palito |
-| `LEIA` | Entrada de dados do ambiente (resultado de ação, verificação) |
-| `ESCREVA` | Saída / execução de um passo do algoritmo |
-| `PARE` | Interrupção antecipada (ex: chamar assistência na troca de pneu) |
+### A regra de ouro da lógica de programação
+
+> **Se você não mandar "abrir a porta", não tem como "sair de casa"!** 🚪
+
+Cada algoritmo nesta lista reforça princípios fundamentais:
+
+**1. Decomposição de problemas**
+Todo problema complexo pode ser quebrado em passos simples e sequenciais. Trocar um pneu parece difícil, mas vira trivial quando você lista cada etapa com clareza.
+
+**2. Decisões (estruturas condicionais)**
+O mundo real é cheio de bifurcações. O algoritmo precisa prever todos os caminhos possíveis — e o que fazer em cada um deles.
+
+**3. Repetição (estruturas de laço)**
+Algumas etapas precisam ser feitas várias vezes até uma condição ser satisfeita. O palito no bolo só sai quando a massa estiver assada — não importa quantas tentativas.
+
+**4. Validação antes de agir**
+Verificar o saldo antes de ir ao ponto, checar o estepe antes de começar a troca — a lógica de programação nos ensina a **sempre validar antes de executar**.
 
 ---
 
-*Lista 1 — Lógica de Programação · Curso Técnico em Desenvolvimento de Sistemas*
+## 📁 Estrutura do Repositório
+
+```
+📦 lista1-logica-algoritmos
+ ┣ 📄 README.md          ← você está aqui
+ ┗ 📄 algoritmos.md      ← pseudocódigos detalhados
+```
+
+---
+
+## 👨‍💻 Informações
+
+| Campo | Detalhe |
+|---|---|
+| 📚 Disciplina | Lógica de Programação |
+| 🏫 Curso | Técnico em Desenvolvimento de Sistemas |
+| 📋 Atividade | Lista 1 — Algoritmos do Cotidiano |
+| 🛠️ Ferramentas | Pseudocódigo + Fluxograma |
+
+---
+
+<div align="center">
+
+*Feito com 🧠 lógica e ☕ café*
+
+</div>
