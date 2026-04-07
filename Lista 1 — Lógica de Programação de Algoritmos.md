@@ -18,7 +18,7 @@
 Esta é a **Lista 1 de Lógica de Programação**, desenvolvida como parte do **Curso Técnico em Desenvolvimento de Sistemas**. O objetivo é afastar o foco da sintaxe de linguagens de programação e exercitar o que realmente importa: **o raciocínio lógico e a decomposição de problemas**.
 
 Para cada tarefa cotidiana foram elaborados:
-- 📊 **Fluxograma** — representação visual do passo a passo com decisões e laços
+- 📊 **Fluxograma** — representação visual do passo a passo
 - 📝 **Pseudocódigo** — descrição do algoritmo em linguagem próxima ao português estruturado
 
 ---
@@ -27,10 +27,10 @@ Para cada tarefa cotidiana foram elaborados:
 
 | # | Algoritmo | Estruturas Utilizadas |
 |---|---|---|
-| 1 | 🚶 [Ir ao Trabalho](#1-️-ir-ao-trabalho) | `SE/ENTÃO`, `ENQUANTO`, `LEIA`, `ESCREVA` |
-| 2 | 🔧 [Troca de Pneu](#2--troca-de-pneu) | `SE/ENTÃO`, `PARE`, `LEIA`, `ESCREVA` |
-| 3 | 💡 [Troca de Lâmpada](#3--troca-de-lâmpada) | `SE/ENTÃO`, `ENQUANTO`, `LEIA`, `ESCREVA` |
-| 4 | 🚌 [Pegar um Ônibus](#4--pegar-um-ônibus) | `SE/ENTÃO`, `ENQUANTO`, `LEIA`, `ESCREVA` |
+| 1 | 🚶 [Ir ao Trabalho](#1-️-ir-ao-trabalho) | `ENQUANTO`, `LEIA`, `ESCREVA` |
+| 2 | 🔧 [Troca de Pneu](#2--troca-de-pneu) | `LEIA`, `ESCREVA` |
+| 3 | 💡 [Troca de Lâmpada](#3--troca-de-lâmpada) | `ENQUANTO`, `LEIA`, `ESCREVA` |
+| 4 | 🚌 [Pegar um Ônibus](#4--pegar-um-ônibus) | `ENQUANTO`, `LEIA`, `ESCREVA` |
 | 5 | 🎂 [Preparar um Bolo](#5--preparar-um-bolo-simples) | `ENQUANTO`, `variáveis`, `LEIA`, `ESCREVA` |
 
 ---
@@ -41,11 +41,9 @@ Antes de ver os algoritmos, é importante entender as estruturas utilizadas:
 
 | Estrutura | Descrição | Quando usar |
 |---|---|---|
-| `SE / ENTÃO / SENÃO` | Executa um bloco de acordo com uma condição | Quando há uma decisão com dois caminhos possíveis |
 | `ENQUANTO / FAÇA` | Repete um bloco enquanto a condição for verdadeira | Quando não sabemos quantas repetições serão necessárias |
 | `LEIA` | Recebe um dado de entrada (do usuário ou do ambiente) | Para capturar informações externas |
 | `ESCREVA` | Exibe uma saída ou executa uma ação | Para registrar cada passo do algoritmo |
-| `PARE` | Interrompe o algoritmo antecipadamente | Quando uma condição impede a continuidade |
 
 ---
 
@@ -55,7 +53,6 @@ Antes de ver os algoritmos, é importante entender as estruturas utilizadas:
 
 **Pontos de atenção:**
 - 🔁 Laço obrigatório para garantir que o crachá seja encontrado antes de sair
-- 🔀 Decisão sobre o meio de transporte (carro, ônibus ou a pé)
 - ✅ Etapas não podem ser puladas (ex: sem abrir a porta não dá para sair)
 
 ### Fluxograma
@@ -77,28 +74,27 @@ Antes de ver os algoritmos, é importante entender as estruturas utilizadas:
 │   Vestir roupa       │
 └──────────┬───────────┘
            ↓
-    ┌──────┴──────┐
-    │ Está com o  │
-    │   crachá?   │◄──────────┐
-    └──────┬──────┘           │
-     Sim ↓    └─ Não          │
-           ↓         ┌────────┴────────┐
-┌──────────────────────┐  │ Procurar o crachá │
-│   Tomar café         │  └─────────────────┘
+┌──────────────────────┐
+│  Procurar o crachá   │◄──┐
+└──────────┬───────────┘   │
+           ↓               │
+┌──────────────────────┐   │
+│  Crachá encontrado?  │───┘
+│  (repetir até sim)   │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│   Tomar café         │
 └──────────┬───────────┘
            ↓
 ┌──────────────────────┐
 │  Abrir porta e sair  │
 └──────────┬───────────┘
            ↓
-    ┌──────┴──────────┐
-    │  Meio de        │
-    │  transporte?    │
-    └──┬────┬─────┬───┘
-  Carro↓  Ônibus↓  A pé↓
-  [dirigir] [ponto] [caminhar]
-       └──────┴───────┘
-                ↓
+┌──────────────────────┐
+│  Deslocar ao trabalho│
+└──────────┬───────────┘
+           ↓
 ┌──────────────────────┐
 │  Passar o crachá na  │
 │      catraca         │
@@ -127,19 +123,7 @@ INÍCIO
   ESCREVA("Tomar café da manhã")
   ESCREVA("Abrir a porta de casa")
   ESCREVA("Sair de casa e fechar a porta")
-
-  LEIA(meio_transporte)
-
-  SE meio_transporte = "carro" ENTÃO
-    ESCREVA("Entrar no carro")
-    ESCREVA("Dirigir até o trabalho")
-  SENÃO SE meio_transporte = "ônibus" ENTÃO
-    ESCREVA("Andar até o ponto de ônibus")
-    ESCREVA("Embarcar no ônibus")
-  SENÃO
-    ESCREVA("Caminhar até o trabalho")
-  FIM_SE
-
+  ESCREVA("Deslocar-se até o trabalho")
   ESCREVA("Chegar ao trabalho")
   ESCREVA("Passar o crachá na catraca")
 FIM_ALGORITMO
@@ -152,7 +136,6 @@ FIM_ALGORITMO
 > **Problema:** Descrever com segurança o processo de trocar um pneu furado na beira da estrada.
 
 **Pontos de atenção:**
-- ⚠️ Verificação do estepe **antes** de começar — se estiver ruim, o algoritmo para e chama assistência
 - 🔩 Afrouxar parafusos **antes** de levantar o carro (detalhe crítico de segurança)
 - ✅ Parafusos devem ser apertados em forma de cruz para distribuir a pressão
 
@@ -175,12 +158,6 @@ FIM_ALGORITMO
 │ Pegar estepe e macaco    │
 └──────────┬───────────────┘
            ↓
-    ┌──────┴──────┐
-    │  Estepe em  │
-    │  boas cond? │
-    └──┬──────────┘
-  Sim ↓       └─ Não → [Chamar assistência] → FIM
-       ↓
 ┌──────────────────────────┐
 │ Afrouxar parafusos (parcial)│
 └──────────┬───────────────┘
@@ -215,14 +192,6 @@ INÍCIO
   ESCREVA("Acionar o pisca-alerta")
   ESCREVA("Parar o carro em local seguro")
   ESCREVA("Retirar estepe e macaco do porta-malas")
-
-  LEIA(estepe_calibrado)
-
-  SE estepe_calibrado = FALSO ENTÃO
-    ESCREVA("Chamar assistência técnica")
-    PARE
-  FIM_SE
-
   ESCREVA("Afrouxar os parafusos sem remover")
   ESCREVA("Posicionar o macaco no chassi")
   ESCREVA("Elevar o carro com o macaco")
@@ -262,24 +231,25 @@ FIM_ALGORITMO
 │   Aguardar esfriar 5min  │
 └──────────┬───────────────┘
            ↓
-    ┌──────┴──────┐
-    │ Precisa de  │
-    │   escada?   │
-    └──┬──────────┘
-  Não ↓       └─ Sim → [Buscar e posicionar escada]
-       ↓                          ↓
-       └──────────────────────────┘
-                    ↓
+┌──────────────────────────┐
+│  Buscar e posicionar     │
+│        escada            │
+└──────────┬───────────────┘
+           ↓
 ┌──────────────────────────┐
 │  Remover lâmpada queimada │
 └──────────┬───────────────┘
            ↓
-    ┌──────┴──────┐
-    │  Lâmpada    │◄──────────────┐
-    │ compatível? │               │
-    └──┬──────────┘               │
-  Sim ↓    └─ Não → [Buscar lâmpada correta] ──┘
-       ↓
+┌──────────────────────────┐
+│  Verificar compatibilidade│◄──┐
+│      da nova lâmpada     │   │
+└──────────┬───────────────┘   │
+           ↓                   │
+┌──────────────────────────┐   │
+│  Lâmpada ok? (repetir    │───┘
+│  até compatível)         │
+└──────────┬───────────────┘
+           ↓
 ┌──────────────────────────┐
 │   Instalar nova lâmpada  │
 └──────────┬───────────────┘
@@ -300,14 +270,8 @@ ALGORITMO TrocaDeLampada
 INÍCIO
   ESCREVA("Desligar o interruptor")
   ESCREVA("Aguardar 5 minutos para a lâmpada esfriar")
-
-  LEIA(precisa_escada)
-
-  SE precisa_escada = VERDADEIRO ENTÃO
-    ESCREVA("Buscar a escada")
-    ESCREVA("Posicionar a escada com segurança")
-  FIM_SE
-
+  ESCREVA("Buscar a escada")
+  ESCREVA("Posicionar a escada com segurança")
   ESCREVA("Subir / aproximar-se da lâmpada")
   ESCREVA("Girar a lâmpada no sentido anti-horário para remover")
 
@@ -316,20 +280,12 @@ INÍCIO
   ENQUANTO nova_lampada_ok = FALSO FAÇA
     ESCREVA("Verificar se a nova lâmpada é compatível")
     LEIA(nova_lampada_ok)
-    SE nova_lampada_ok = FALSO ENTÃO
-      ESCREVA("Buscar lâmpada com bocal e potência corretos")
-    FIM_SE
+    ESCREVA("Buscar lâmpada com bocal e potência corretos")
   FIM_ENQUANTO
 
   ESCREVA("Instalar a nova lâmpada (sentido horário)")
   ESCREVA("Descer da escada")
   ESCREVA("Ligar o interruptor")
-
-  LEIA(lampada_acendeu)
-
-  SE lampada_acendeu = FALSO ENTÃO
-    ESCREVA("Verificar o circuito elétrico ou chamar eletricista")
-  FIM_SE
 FIM_ALGORITMO
 ```
 
@@ -355,23 +311,23 @@ FIM_ALGORITMO
 │ Consultar linha/horário  │
 └──────────┬───────────────┘
            ↓
-    ┌──────┴──────┐
-    │  Saldo ok?  │
-    └──┬──────────┘
-  Sim ↓       └─ Não → [Recarregar o cartão]
-       ↓                         ↓
-       └─────────────────────────┘
-                    ↓
+┌──────────────────────────┐
+│   Recarregar o cartão    │
+└──────────┬───────────────┘
+           ↓
 ┌──────────────────────────┐
 │   Ir ao ponto de ônibus  │
 └──────────┬───────────────┘
            ↓
-    ┌──────┴──────┐
-    │  É o ônibus │◄──────────────┐
-    │   correto?  │               │
-    └──┬──────────┘               │
-  Sim ↓    └─ Não → [Aguardar próximo] ──┘
-       ↓
+┌──────────────────────────┐
+│  Aguardar ônibus correto │◄──┐
+└──────────┬───────────────┘   │
+           ↓                   │
+┌──────────────────────────┐   │
+│  É o ônibus correto?     │───┘
+│  (repetir até sim)       │
+└──────────┬───────────────┘
+           ↓
 ┌──────────────────────────┐
 │  Aguardar parar + embarcar│
 └──────────┬───────────────┘
@@ -380,12 +336,15 @@ FIM_ALGORITMO
 │    Validar o cartão      │
 └──────────┬───────────────┘
            ↓
-    ┌──────┴──────┐
-    │  Chegou ao  │◄──────────────┐
-    │  destino?   │               │
-    └──┬──────────┘               │
-  Sim ↓    └─ Não → [Aguardar] ──┘
-       ↓
+┌──────────────────────────┐
+│  Aguardar parada destino │◄──┐
+└──────────┬───────────────┘   │
+           ↓                   │
+┌──────────────────────────┐   │
+│  Chegou ao destino?      │───┘
+│  (repetir até sim)       │
+└──────────┬───────────────┘
+           ↓
 ┌──────────────────────────┐
 │ Acionar campainha e sair │
 └──────────┬───────────────┘
@@ -402,27 +361,14 @@ ALGORITMO PegarOnibus
 INÍCIO
   LEIA(numero_linha, horario_desejado)
   ESCREVA("Consultar horário da linha " + numero_linha)
-
-  LEIA(saldo_cartao)
-  LEIA(tarifa)
-
-  SE saldo_cartao < tarifa ENTÃO
-    ESCREVA("Recarregar o cartão de transporte")
-  FIM_SE
-
+  ESCREVA("Recarregar o cartão de transporte")
   ESCREVA("Deslocar-se até o ponto de ônibus")
 
   onibus_correto <- FALSO
 
   ENQUANTO onibus_correto = FALSO FAÇA
     LEIA(onibus_chegou, numero_onibus)
-    SE onibus_chegou = VERDADEIRO ENTÃO
-      SE numero_onibus = numero_linha ENTÃO
-        onibus_correto <- VERDADEIRO
-      SENÃO
-        ESCREVA("Aguardar próximo ônibus")
-      FIM_SE
-    FIM_SE
+    ESCREVA("Aguardar próximo ônibus")
   FIM_ENQUANTO
 
   ESCREVA("Aguardar o ônibus parar completamente")
@@ -465,12 +411,15 @@ FIM_ALGORITMO
 │ (ovos, farinha, açúcar, etc) │
 └──────────┬───────────────────┘
            ↓
-    ┌──────┴──────┐
-    │  Todos ing. │◄──────────────┐
-    │ disponíveis?│               │
-    └──┬──────────┘               │
-  Sim ↓    └─ Não → [Comprar faltantes] ─┘
-       ↓
+┌──────────────────────────┐
+│  Verificar ingredientes  │◄──┐
+└──────────┬───────────────┘   │
+           ↓                   │
+┌──────────────────────────┐   │
+│  Todos disponíveis?      │───┘
+│  (repetir até sim)       │
+└──────────┬───────────────┘
+           ↓
 ┌──────────────────────────┐
 │  Pré-aquecer forno 180°C │
 └──────────┬───────────────┘
@@ -488,12 +437,15 @@ FIM_ALGORITMO
 │   Levar ao forno 40min   │
 └──────────┬───────────────┘
            ↓
-    ┌──────┴──────┐
-    │   Palito    │◄──────────────┐
-    │  sai limpo? │               │
-    └──┬──────────┘               │
-  Sim ↓    └─ Não → [+10 minutos] ┘
-       ↓
+┌──────────────────────────┐
+│  Testar o palito         │◄──┐
+└──────────┬───────────────┘   │
+           ↓                   │
+┌──────────────────────────┐   │
+│  Palito sai limpo?       │───┘
+│  (repetir até sim)       │
+└──────────┬───────────────┘
+           ↓
 ┌──────────────────────────┐
 │  Retirar e aguardar      │
 │       esfriar            │
@@ -516,9 +468,7 @@ INÍCIO
   ENQUANTO ingredientes_disponiveis = FALSO FAÇA
     ESCREVA("Verificar ingredientes disponíveis")
     LEIA(ingredientes_disponiveis)
-    SE ingredientes_disponiveis = FALSO ENTÃO
-      ESCREVA("Comprar ingredientes faltantes")
-    FIM_SE
+    ESCREVA("Comprar ingredientes faltantes")
   FIM_ENQUANTO
 
   ESCREVA("Pré-aquecer o forno a 180°C")
@@ -540,10 +490,8 @@ INÍCIO
   ENQUANTO palito_limpo = FALSO FAÇA
     ESCREVA("Testar o palito no centro do bolo")
     LEIA(palito_limpo)
-    SE palito_limpo = FALSO ENTÃO
-      ESCREVA("Assar por mais 10 minutos")
-      tempo <- tempo + 10
-    FIM_SE
+    ESCREVA("Assar por mais 10 minutos")
+    tempo <- tempo + 10
   FIM_ENQUANTO
 
   ESCREVA("Retirar o bolo do forno")
@@ -565,13 +513,10 @@ Cada algoritmo nesta lista reforça princípios fundamentais:
 **1. Decomposição de problemas**
 Todo problema complexo pode ser quebrado em passos simples e sequenciais. Trocar um pneu parece difícil, mas vira trivial quando você lista cada etapa com clareza.
 
-**2. Decisões (estruturas condicionais)**
-O mundo real é cheio de bifurcações. O algoritmo precisa prever todos os caminhos possíveis — e o que fazer em cada um deles.
-
-**3. Repetição (estruturas de laço)**
+**2. Repetição (estruturas de laço)**
 Algumas etapas precisam ser feitas várias vezes até uma condição ser satisfeita. O palito no bolo só sai quando a massa estiver assada — não importa quantas tentativas.
 
-**4. Validação antes de agir**
+**3. Validação antes de agir**
 Verificar o saldo antes de ir ao ponto, checar o estepe antes de começar a troca — a lógica de programação nos ensina a **sempre validar antes de executar**.
 
 ---
