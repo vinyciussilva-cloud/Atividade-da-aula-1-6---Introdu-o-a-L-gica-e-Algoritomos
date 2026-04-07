@@ -1,10 +1,16 @@
-# 🧠 Lógica de Programação: Lista 1 - Algoritmos do Cotidiano
+<div align="center"> 
+🧠 Lista 1 — Lógica de Programação de Algoritmos
+    
+"Antes de escrever código, aprenda a pensar. A lógica é a base de tudo."
+</div> 
+________________________________________
+📋 Sobre a Atividade
+Esta é a Lista 1 de Lógica de Programação, desenvolvida como parte do Curso Técnico em Desenvolvimento de Sistemas. O objetivo é afastar o foco da sintaxe de linguagens de programação e exercitar o que realmente importa: o raciocínio lógico e a decomposição de problemas.
+Para cada tarefa cotidiana foram elaborados:
+•	📊 Fluxograma — representação visual do passo a passo com decisões e laços
+•	📝 Pseudocódigo — descrição do algoritmo em linguagem próxima ao português estruturado
+________________________________________
 
-Esta é a atividade inicial sobre Lógica de Programação do curso **Técnico em Desenvolvimento de Sistemas**. O foco aqui não é o código em si, mas o que realmente importa no início da jornada: a **Lógica de Programação**.
-
-O desafio consistiu em transformar tarefas rotineiras em processos estruturados, utilizando **Pseudocódigo** e **Fluxogramas**.
-
----
 
 ## 📝 O Desafio
 
