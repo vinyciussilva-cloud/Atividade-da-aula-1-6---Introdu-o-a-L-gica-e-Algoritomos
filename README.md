@@ -125,5 +125,5 @@ Na lógica de programação, cada forma geométrica tem um papel específico no 
 
 ## 👨‍💻 Autor
 
-Feito com dedicação como parte da formação em Desenvolvimento de Sistemas no SENAI.  
+Feito por Vinycius Lopes Monteiro da Silva, com dedicação como parte da formação em Desenvolvimento de Sistemas no SENAI.  
 Sinta-se à vontade para explorar os arquivos e deixar feedback! 🚀
